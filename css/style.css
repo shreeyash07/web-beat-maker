@@ -1,0 +1,45 @@
+.label {
+  text-align: center;
+  width: 100%;
+  position: absolute;
+  top: 45%;
+}
+
+.purple {
+  background-color: #a94be9;
+}
+
+.blue {
+  background-color: #54a4ca;
+}
+.green {
+  background-color: #54ca64;
+}
+
+.key {
+  /* float: left; */
+  width: 100%;
+  height: 100%;
+  border-bottom: 1px solid #ffffff;
+  position: relative;
+  grid-column: span 2;
+}
+.delete {
+  grid-column: span 4;
+}
+.tab {
+  grid-column: span 3;
+}
+.return {
+  grid-column: span 3;
+}
+.capslock {
+  grid-column: span 4;
+}
+.keyboard .key.delete,
+.keyboard .key.transparent,
+.keyboard .key.tab,
+.keyboard .key.capslock,
+.keyboard .key.return {
+  border-bottom: 1px solid transparent;
+}
