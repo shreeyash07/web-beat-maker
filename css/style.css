@@ -16,6 +16,10 @@
   background-color: #54ca64;
 }
 
+.record-button.active {
+  background-color: red;
+}
+
 .key {
   /* float: left; */
   width: 100%;
