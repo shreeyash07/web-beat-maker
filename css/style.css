@@ -25,22 +25,22 @@
 .record-button {
   width: 24px;
   height: 24px;
-  background-image: url("/assets/images/button_inactive.png");
+  background-image: url("../assets/images/button_inactive.png");
   margin-left: 25px;
   float: left;
 }
 .record-button.active {
-  background-image: url("/assets/images/button.png");
+  background-image: url("../assets/images/button.png");
 }
 .play-button {
   width: 24px;
   height: 24px;
-  background-image: url("/assets/images/play-button.png");
+  background-image: url("../assets/images/play-button.png");
   float: left;
   margin-left: 15px;
 }
 .play-button.active {
-  background-image: url("/assets/images/stop.png");
+  background-image: url("../assets/images/stop.png");
 }
 .key {
   /* float: left; */
