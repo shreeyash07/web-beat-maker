@@ -4,7 +4,7 @@
   position: absolute;
   top: 45%;
   color: rgba(40, 42, 48, 0.4);
-  font-size: 10px;
+  font-size: 12px;
   text-transform: uppercase;
 }
 
@@ -14,10 +14,13 @@
 }
 
 .blue {
-  background-color: #54a4ca;
+  background-image: linear-gradient(to right, #52a9d8, #369fd8);
 }
 .green {
   background-image: linear-gradient(to right, #52df9d, #41dc94);
+}
+.buttons {
+  cursor: pointer;
 }
 .record-button {
   width: 24px;
@@ -46,6 +49,7 @@
   border-bottom: 1px solid #ffffff;
   position: relative;
   grid-column: span 2;
+  cursor: pointer;
 }
 .key.active {
   transform: scale(0.81, 0.81);
