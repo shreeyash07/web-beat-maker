@@ -76,3 +76,11 @@
 .keyboard .key.return {
   border-bottom: 1px solid transparent;
 }
+
+.timer {
+  font-size: 18px;
+  color: black;
+  margin-left: 15px;
+  float: left;
+  width: 60px;
+}

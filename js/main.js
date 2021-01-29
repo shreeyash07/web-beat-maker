@@ -1,6 +1,10 @@
 let recordingStartTime;
+let recordingStopTime;
 let songNotes = [];
 let isRecording = false;
+let barTime;
+let loopArray = [];
+let index = 0;
 
 //toggler
 function togglerRecording() {
@@ -10,10 +14,12 @@ function togglerRecording() {
 // validation for recording
 function change() {
   if (isRecording == true) {
-    stopRecording();
+    stopTimer();
+    resetTimer();
     isRecording = false;
   } else {
     startRecording();
+    startTimer();
     isRecording = true;
   }
 }
@@ -24,17 +30,26 @@ function startRecording() {
 }
 
 function stopRecording() {
-  // playSong();
+  isRecording = false;
+  stopTimer();
+  resetTimer();
+  togglerRecording();
+  saveLoop();
 }
 
 // plays recorded beats
 function playSong() {
-  if (songNotes.length === 0) return;
-  songNotes.forEach((note) => {
-    setTimeout(() => {
-      playNote(keyMap[note.key]);
-    }, note.startTime);
-  });
+  let newArr = [];
+  if (loopArray.length != 0) {
+    for (let i = 0; i < loopArray.length; i++) {
+      newArr = newArr.concat(loopArray[i]);
+    }
+    newArr.forEach((note) => {
+      setTimeout(() => {
+        playNote(keyMap[note.key]);
+      }, note.startTime);
+    });
+  }
 }
 
 /**
@@ -45,6 +60,7 @@ function playNote(key) {
   const noteAudio = document.getElementById(key.dataset.note);
   noteAudio.currentTime = 0;
   noteAudio.play();
+  showLoop();
   key.classList.add("active");
   noteAudio.addEventListener("ended", () => {
     key.classList.remove("active");
@@ -64,5 +80,22 @@ function recordNote(note) {
     key: note,
     startTime: Date.now() - recordingStartTime,
   });
-  //console.log(songNotes);
+  console.log(songNotes);
+}
+
+function saveLoop() {
+  for (let i = 0; i < songNotes.length; i++) {
+    loopArray.splice(index, 1, songNotes);
+  }
+  index += 1;
+  songNotes = [];
+}
+
+function showLoop() {
+  for (let i = 0; i < songNotes.length; i++) {
+    const loop = document.createElement("div");
+    loop.setAttribute("class", "loop");
+    loop.innerHTML = songNotes[i].key;
+    looper.appendChild(loop);
+  }
 }
