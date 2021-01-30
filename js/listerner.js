@@ -2,6 +2,14 @@
 keys.forEach((key) => {
   key.addEventListener("click", () => {
     playNote(key);
+    if (isRecording) {
+      const temp = document.getElementById(tempName);
+      const loop = document.createElement("div");
+      loop.style.backgroundColor = String(key.id);
+      loop.style.marginRight = 40 + "px";
+      loop.setAttribute("class", "loop");
+      temp.appendChild(loop);
+    }
   });
 });
 
@@ -23,9 +31,29 @@ document.addEventListener("keydown", (e) => {
   const greenKeysIndex = GREEN_KEYS.indexOf(key);
   const blueKeysIndex = BLUE_KEYS.indexOf(key);
 
+  const temp = document.getElementById(tempName);
+  let color = "";
+
   if (purpleKeysIndex > -1) {
     playNote(purpleKeys[purpleKeysIndex]);
+    color = purpleKeys[purpleKeysIndex];
   }
-  if (greenKeysIndex > -1) playNote(greenKeys[greenKeysIndex]);
-  if (blueKeysIndex > -1) playNote(blueKeys[blueKeysIndex]);
+  if (greenKeysIndex > -1) {
+    playNote(greenKeys[greenKeysIndex]);
+    color = greenKeys[greenKeysIndex];
+  }
+  if (blueKeysIndex > -1) {
+    playNote(blueKeys[blueKeysIndex]);
+    color = blueKeys[blueKeysIndex];
+  }
+
+  if (isRecording) {
+    const loop = document.createElement("div");
+    loop.setAttribute("class", "loop");
+    loop.style.backgroundColor = String(color.id);
+    loop.style.marginLeft = moveLeft + "px";
+
+    temp.appendChild(loop);
+    checkLoop = true;
+  }
 });

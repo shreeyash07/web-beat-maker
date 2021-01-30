@@ -23,3 +23,12 @@
   grid-template-columns: repeat(30, 40px);
   grid-template-rows: repeat(4, 80px);
 }
+.looper-wrapper {
+  width: 100%;
+  margin-top: 3%;
+}
+.loop {
+  float: left;
+  width: 10px;
+  height: 30px;
+}

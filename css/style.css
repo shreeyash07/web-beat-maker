@@ -21,6 +21,8 @@
 }
 .buttons {
   cursor: pointer;
+  width: 100%;
+  height: 30px;
 }
 .record-button {
   width: 24px;

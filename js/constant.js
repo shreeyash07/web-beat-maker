@@ -22,6 +22,7 @@ const purpleKeys = document.querySelectorAll(".key.purple");
 const greenKeys = document.querySelectorAll(".key.green");
 const blueKeys = document.querySelectorAll(".key.blue");
 const looper = document.getElementById("looper");
+const looperWrapper = document.getElementById("looper-wrapper");
 
 const keyMap = [...keys].reduce((map, key) => {
   map[key.dataset.note] = key;

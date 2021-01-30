@@ -1,6 +1,7 @@
 const timer = document.getElementById("timer");
 let ms = 0;
 let sec = 0;
+let moveLeft = 0;
 
 let stopTime = true;
 
@@ -23,6 +24,7 @@ function timerCycle() {
     ms = parseInt(ms);
 
     ms = ms + 1;
+    moveLeft += 0.1;
     if (ms == 100) {
       sec = sec + 1;
       ms = 0;
@@ -36,10 +38,10 @@ function timerCycle() {
     }
     timer.innerHTML = sec + ":" + ms;
 
-    if (sec == 3) {
+    if (sec == 5) {
       stopRecording();
     }
-
+    console.log(moveLeft);
     setTimeout("timerCycle()", 10);
   }
 }
@@ -48,4 +50,5 @@ function resetTimer() {
   timer.innerHTML = "00:00";
   ms = 0;
   sec = 0;
+  moveLeft = 0;
 }

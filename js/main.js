@@ -5,6 +5,8 @@ let isRecording = false;
 let barTime;
 let loopArray = [];
 let index = 0;
+let divId = 1;
+let tempName = "";
 
 //toggler
 function togglerRecording() {
@@ -16,6 +18,7 @@ function change() {
   if (isRecording == true) {
     stopTimer();
     resetTimer();
+    stopRecording();
     isRecording = false;
   } else {
     startRecording();
@@ -27,6 +30,7 @@ function change() {
 // starts recording time
 function startRecording() {
   recordingStartTime = Date.now();
+  tempName = createDiv();
 }
 
 function stopRecording() {
@@ -60,7 +64,6 @@ function playNote(key) {
   const noteAudio = document.getElementById(key.dataset.note);
   noteAudio.currentTime = 0;
   noteAudio.play();
-  showLoop();
   key.classList.add("active");
   noteAudio.addEventListener("ended", () => {
     key.classList.remove("active");
@@ -80,22 +83,24 @@ function recordNote(note) {
     key: note,
     startTime: Date.now() - recordingStartTime,
   });
-  console.log(songNotes);
+  //console.log(songNotes);
 }
 
 function saveLoop() {
   for (let i = 0; i < songNotes.length; i++) {
     loopArray.splice(index, 1, songNotes);
   }
-  index += 1;
   songNotes = [];
+  index += 1;
 }
 
-function showLoop() {
-  for (let i = 0; i < songNotes.length; i++) {
-    const loop = document.createElement("div");
-    loop.setAttribute("class", "loop");
-    loop.innerHTML = songNotes[i].key;
-    looper.appendChild(loop);
-  }
+function createDiv() {
+  divName = "looper" + divId;
+  const newDiv = document.createElement("div");
+  newDiv.setAttribute("id", divName);
+  newDiv.style.width = 100 + "%";
+  newDiv.style.height = 30 + "px";
+  looperWrapper.appendChild(newDiv);
+  divId++;
+  return divName;
 }
