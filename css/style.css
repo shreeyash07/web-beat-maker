@@ -177,3 +177,13 @@
   color: #ffffff;
   background-color: #9052df;
 }
+
+#progress-bar {
+  width: 96%;
+}
+
+#progress-line {
+  width: 1px;
+  height: 100%;
+  background-color: grey;
+}

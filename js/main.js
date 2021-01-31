@@ -25,6 +25,7 @@ function startRecording() {
   recordingStartTime = Date.now();
   tempName = createDiv();
   startTimer();
+  move();
   recordButton.classList.add("active");
 }
 
@@ -102,4 +103,22 @@ function createDiv() {
   looperWrapper.appendChild(newDiv);
   divId++;
   return divName;
+}
+
+let i = 0;
+let elem = document.getElementById("progress-line");
+elem.style.position = "absolute";
+function move() {
+  if (i == 0) {
+    i = 1;
+    let id = setInterval(frame, 10);
+    function frame() {
+      if (moveLeft >= 100) {
+        clearInterval(id);
+        i = 0;
+      } else {
+        elem.style.left = moveLeft + "%";
+      }
+    }
+  }
 }

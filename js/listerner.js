@@ -6,7 +6,7 @@ keys.forEach((key) => {
       const temp = document.getElementById(tempName);
       const loop = document.createElement("div");
       loop.style.backgroundColor = String(key.id);
-      loop.style.marginRight = 40 + "px";
+      loop.style.left = moveLeft + "%";
       loop.setAttribute("class", "loop");
       temp.appendChild(loop);
     }
@@ -15,6 +15,9 @@ keys.forEach((key) => {
 
 playButton.addEventListener("click", () => {
   playSong();
+  startTimer();
+  elem.style.left = moveLeft + "%";
+  move();
   //playButton.classList.add("active");
 });
 
