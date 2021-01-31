@@ -2,8 +2,10 @@ const timer = document.getElementById("timer");
 let ms = 0;
 let sec = 0;
 let moveLeft = 0;
+let leftValue = 0.333333;
 
 let stopTime = true;
+let timeInterval = 3;
 
 function startTimer() {
   if (stopTime == true) {
@@ -24,7 +26,7 @@ function timerCycle() {
     ms = parseInt(ms);
 
     ms = ms + 1;
-    moveLeft += 0.1;
+    moveLeft += leftValue;
     if (ms == 100) {
       sec = sec + 1;
       ms = 0;
@@ -38,16 +40,16 @@ function timerCycle() {
     }
     timer.innerHTML = sec + ":" + ms;
 
-    if (sec == 5) {
+    if (sec == timeInterval) {
       stopRecording();
     }
-    console.log(moveLeft);
+
     setTimeout("timerCycle()", 10);
   }
 }
 
 function resetTimer() {
-  timer.innerHTML = "00:00";
+  timer.innerHTML = "00:00" + "/" + timeInterval + "sec";
   ms = 0;
   sec = 0;
   moveLeft = 0;

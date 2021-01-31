@@ -8,21 +8,14 @@ let index = 0;
 let divId = 1;
 let tempName = "";
 
-//toggler
-function togglerRecording() {
-  recordButton.classList.toggle("active");
-}
-
+bar2.classList.add("active");
 // validation for recording
 function change() {
   if (isRecording == true) {
-    stopTimer();
-    resetTimer();
     stopRecording();
     isRecording = false;
   } else {
     startRecording();
-    startTimer();
     isRecording = true;
   }
 }
@@ -31,14 +24,16 @@ function change() {
 function startRecording() {
   recordingStartTime = Date.now();
   tempName = createDiv();
+  startTimer();
+  recordButton.classList.add("active");
 }
 
 function stopRecording() {
   isRecording = false;
   stopTimer();
   resetTimer();
-  togglerRecording();
   saveLoop();
+  recordButton.classList.remove("active");
 }
 
 // plays recorded beats
@@ -83,7 +78,7 @@ function recordNote(note) {
     key: note,
     startTime: Date.now() - recordingStartTime,
   });
-  //console.log(songNotes);
+  console.log(songNotes);
 }
 
 function saveLoop() {
@@ -92,14 +87,18 @@ function saveLoop() {
   }
   songNotes = [];
   index += 1;
+  console.log(loopArray);
 }
 
 function createDiv() {
   divName = "looper" + divId;
   const newDiv = document.createElement("div");
   newDiv.setAttribute("id", divName);
-  newDiv.style.width = 100 + "%";
-  newDiv.style.height = 30 + "px";
+  newDiv.style.margin = "auto";
+  newDiv.style.width = 96 + "%";
+  newDiv.style.height = 40 + "px";
+  newDiv.style.borderBottom = "2px solid white";
+  newDiv.style.position = "relative";
   looperWrapper.appendChild(newDiv);
   divId++;
   return divName;

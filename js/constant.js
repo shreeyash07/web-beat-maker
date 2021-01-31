@@ -23,6 +23,10 @@ const greenKeys = document.querySelectorAll(".key.green");
 const blueKeys = document.querySelectorAll(".key.blue");
 const looper = document.getElementById("looper");
 const looperWrapper = document.getElementById("looper-wrapper");
+const bar2 = document.getElementById("bar2");
+const bar4 = document.getElementById("bar4");
+const bar8 = document.getElementById("bar8");
+const bar16 = document.getElementById("bar16");
 
 const keyMap = [...keys].reduce((map, key) => {
   map[key.dataset.note] = key;

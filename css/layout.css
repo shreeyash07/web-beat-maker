@@ -2,18 +2,19 @@
   width: 100%;
   background-color: bisque;
   margin: 0 auto;
-  background-image: url("../assets/images/background.jpg");
-  opacity: 0.9;
 }
 .header {
-  width: 94%;
+  background-image: url("../assets/images/purple-black-polka.jpg");
+  background-size: cover;
+  width: 100%;
   margin: 0 auto;
+  height: 60vh;
 }
 
 .keyboard-wrapper {
-  width: 96%;
+  width: 89%;
   margin: 0 auto;
-  margin-top: 3%;
+  margin-top: 20px;
 }
 
 .keyboard {
@@ -25,10 +26,14 @@
 }
 .looper-wrapper {
   width: 100%;
-  margin-top: 3%;
+  height: 70vh;
+  margin: 0 auto;
+  background-color: #eff1f1;
+  overflow: hidden;
 }
 .loop {
-  float: left;
-  width: 10px;
-  height: 30px;
+  display: inline-block;
+  width: 7px;
+  height: 40px;
+  position: absolute;
 }

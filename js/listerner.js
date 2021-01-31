@@ -13,11 +13,6 @@ keys.forEach((key) => {
   });
 });
 
-// record and play button listener
-recordButton.addEventListener("click", () => {
-  togglerRecording();
-});
-
 playButton.addEventListener("click", () => {
   playSong();
   //playButton.classList.add("active");
@@ -51,9 +46,41 @@ document.addEventListener("keydown", (e) => {
     const loop = document.createElement("div");
     loop.setAttribute("class", "loop");
     loop.style.backgroundColor = String(color.id);
-    loop.style.marginLeft = moveLeft + "px";
-
+    loop.style.left = moveLeft + "%";
     temp.appendChild(loop);
     checkLoop = true;
   }
+});
+
+bar2.addEventListener("click", (e) => {
+  timeInterval = 3;
+  bar2.classList.add("active");
+  bar4.classList.remove("active");
+  bar8.classList.remove("active");
+  bar16.classList.remove("active");
+  leftValue = 0.333333;
+});
+bar4.addEventListener("click", (e) => {
+  timeInterval = 6;
+  bar4.classList.add("active");
+  bar2.classList.remove("active");
+  bar8.classList.remove("active");
+  bar16.classList.remove("active");
+  leftValue = 0.1666667;
+});
+bar8.addEventListener("click", (e) => {
+  timeInterval = 9;
+  bar8.classList.add("active");
+  bar2.classList.remove("active");
+  bar4.classList.remove("active");
+  bar16.classList.remove("active");
+  leftValue = 0.111111;
+});
+bar16.addEventListener("click", (e) => {
+  timeInterval = 12;
+  bar16.classList.add("active");
+  bar2.classList.remove("active");
+  bar8.classList.remove("active");
+  bar4.classList.remove("active");
+  leftValue = 0.083333;
 });

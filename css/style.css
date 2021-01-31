@@ -19,16 +19,42 @@
 .green {
   background-image: linear-gradient(to right, #52df9d, #41dc94);
 }
+.header-content {
+  margin: 0, auto;
+  width: 94%;
+  display: inline-block;
+  height: 7vh;
+
+  position: relative;
+}
+.title {
+  float: left;
+  width: 25%;
+  color: #369fd8;
+  position: absolute;
+  top: 20px;
+  left: 60px;
+  margin-left: 5%;
+}
+.logos {
+  width: 50px;
+  height: 50px;
+  background-image: url("/assets/images/beat.png");
+  background-size: cover;
+  float: left;
+  margin-left: 5%;
+}
 .buttons {
   cursor: pointer;
-  width: 100%;
-  height: 30px;
+  margin: 0 auto;
+  width: 96%;
+  height: 35px;
+  margin-top: 10px;
 }
 .record-button {
   width: 24px;
   height: 24px;
   background-image: url("../assets/images/button_inactive.png");
-  margin-left: 25px;
   float: left;
 }
 .record-button.active {
@@ -48,7 +74,7 @@
   /* float: left; */
   width: 100%;
   height: 100%;
-  border-bottom: 1px solid #ffffff;
+
   position: relative;
   grid-column: span 2;
   cursor: pointer;
@@ -71,13 +97,6 @@
 .capslock {
   grid-column: span 4;
 }
-.keyboard .key.delete,
-.keyboard .key.transparent,
-.keyboard .key.tab,
-.keyboard .key.capslock,
-.keyboard .key.return {
-  border-bottom: 1px solid transparent;
-}
 
 .timer {
   font-size: 18px;
@@ -85,4 +104,76 @@
   margin-left: 15px;
   float: left;
   width: 60px;
+}
+
+.bar-choose {
+  float: right;
+  width: 150px;
+  font-size: 11px;
+  color: #9052df;
+  display: inline;
+  text-align: center;
+}
+.bar-title {
+  width: 50px;
+  position: absolute;
+  font-size: 16px;
+  right: 153px;
+}
+.bar-choose ul li {
+  display: inline-block;
+}
+
+.bar2 {
+  border: 2px solid;
+  border-color: #9052df;
+  border-radius: 25px 0 0 25px;
+  background-color: white;
+  position: relative;
+  left: 10px;
+  width: 25px;
+  padding: 10%;
+}
+.bar2.active,
+.bar4.active,
+.bar8.active,
+.bar16.active {
+  background-color: #9052df;
+  color: #ffffff;
+}
+.bar4 {
+  border: 2px solid;
+  border-color: #9052df;
+  background-color: white;
+  position: relative;
+  left: 3px;
+  width: 25px;
+  padding: 10%;
+}
+.bar8 {
+  border: 2px solid;
+  border-color: #9052df;
+  background-color: white;
+  position: relative;
+  left: -4px;
+  width: 25px;
+  padding: 10%;
+}
+.bar16 {
+  border: 2px solid;
+  border-color: #9052df;
+  border-radius: 0 25px 25px 0;
+  background-color: white;
+  position: relative;
+  right: 11px;
+  width: 25px;
+  padding: 10%;
+}
+
+.bar2:hover,
+.bar4:hover,
+.bar8:hover,
+.bar16:hover {
+  color: #ffffff;
+  background-color: #9052df;
 }
