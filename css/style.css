@@ -119,12 +119,13 @@
   width: 50px;
   position: absolute;
   font-size: 14px;
-  right: 10%;
-  top: 10%;
+  right: 0%;
+  top: 14%;
 }
+
 .bar-choose ul {
   position: absolute;
-  right: 1%;
+  right: 3%;
   top: 10%;
 }
 .bar-choose ul li {
@@ -139,7 +140,7 @@
   position: relative;
   left: 10px;
   width: 25px;
-  padding: 1%;
+  padding: 2%;
 }
 .bar2.active,
 .bar4.active,
@@ -198,9 +199,29 @@
 .slider {
   float: left;
   width: 150px;
-  height: 25px;
+  height: 23px;
   position: absolute;
   left: 45%;
+}
+.slider-title {
+  width: 50px;
+  position: absolute;
+  font-size: 14px;
+  right: -61%;
+  top: 14%;
+  color: #9052df;
+}
+.dots {
+  width: 20px;
+  height: 20px;
+  background-color: grey;
+  border-radius: 50%;
+  position: absolute;
+  top: 7%;
+  left: -45%;
+}
+.dots.active {
+  background-color: #9052df;
 }
 .slider input {
   -webkit-appearance: none;
@@ -232,7 +253,6 @@
   height: 30px;
   width: 30px;
   transform: translateX(-70%) scale(0);
-  font-weight: 500;
   font-size: 14px;
   top: -40px;
   line-height: 40px;
@@ -268,13 +288,12 @@
 }
 .field .value {
   position: absolute;
-  font-size: 10px;
+  font-size: 14px;
   color: #9052df;
-  font-weight: 600;
 }
 .field .value.left {
   left: -22px;
 }
 .field .value.right {
-  right: -43px;
+  right: -34px;
 }

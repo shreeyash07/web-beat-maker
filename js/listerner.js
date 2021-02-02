@@ -13,6 +13,16 @@ keys.forEach((key) => {
   });
 });
 
+let isMetronome = true;
+dot.addEventListener("click", () => {
+  if (isMetronome == true) {
+    metronome();
+    isMetronome = false;
+  } else {
+    stopMetronome();
+    isMetronome = true;
+  }
+});
 playButton.addEventListener("click", () => {
   playSong();
   startTimer();

@@ -26,6 +26,8 @@ function startRecording() {
   tempName = createDiv();
   startTimer();
   move();
+  metronome();
+  isMetronome = false;
   recordButton.classList.add("active");
 }
 
@@ -44,6 +46,7 @@ function playSong() {
   if (loopArray.length != 0) {
     for (let i = 0; i < loopArray.length; i++) {
       newArr = newArr.concat(loopArray[i]);
+      console.log(newArr);
     }
     newArr.forEach((note) => {
       setTimeout(() => {
@@ -130,14 +133,22 @@ function checkLoop() {
     divId--;
   }
 }
+
+let mInterval;
 function metronome() {
   const sound = document.getElementById("hat");
-  setInterval(() => {
+  mInterval = setInterval(() => {
     sound.play();
     sound.currentTime = 0;
-  }, 700);
-}
 
+    dot.classList.toggle("active");
+  }, (60 / parseInt(inputSlider.value)) * 1000);
+}
+function stopMetronome() {
+  clearInterval(mInterval);
+}
+//let mt = 1000 - ((1000 / 60) * parseInt(inputSlider.value) - 1000);
+//console.log(mt);
 inputSlider.oninput = () => {
   let value = inputSlider.value;
   console.log(value);

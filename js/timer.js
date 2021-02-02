@@ -41,7 +41,7 @@ function timerCycle() {
     timer.innerHTML = sec + ":" + ms;
 
     if (sec == timeInterval) {
-      stopRecording();
+      //stopRecording();
       playSong();
       startTimer();
       elem.style.left = moveLeft + "%";
