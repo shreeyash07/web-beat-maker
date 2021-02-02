@@ -51,7 +51,6 @@ document.addEventListener("keydown", (e) => {
     loop.style.backgroundColor = String(color.id);
     loop.style.left = moveLeft + "%";
     temp.appendChild(loop);
-    checkLoop = true;
   }
 });
 

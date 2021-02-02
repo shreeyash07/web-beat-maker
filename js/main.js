@@ -34,6 +34,7 @@ function stopRecording() {
   stopTimer();
   resetTimer();
   saveLoop();
+  checkLoop();
   recordButton.classList.remove("active");
 }
 
@@ -122,3 +123,28 @@ function move() {
     }
   }
 }
+function checkLoop() {
+  const temp = document.getElementById(tempName);
+  if (temp.querySelectorAll(".loop").length === 0) {
+    temp.parentNode.removeChild(temp);
+    divId--;
+  }
+}
+function metronome() {
+  const sound = document.getElementById("hat");
+  setInterval(() => {
+    sound.play();
+    sound.currentTime = 0;
+  }, 700);
+}
+
+inputSlider.oninput = () => {
+  let value = inputSlider.value;
+  console.log(value);
+  slideValue.textContent = value;
+  slideValue.style.left = value / 2 + "%";
+  slideValue.classList.add("show");
+};
+inputSlider.onblur = () => {
+  slideValue.classList.remove("show");
+};

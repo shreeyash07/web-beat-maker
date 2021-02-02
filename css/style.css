@@ -50,6 +50,7 @@
   width: 96%;
   height: 35px;
   margin-top: 10px;
+  position: relative;
 }
 .record-button {
   width: 24px;
@@ -117,8 +118,14 @@
 .bar-title {
   width: 50px;
   position: absolute;
-  font-size: 16px;
-  right: 153px;
+  font-size: 14px;
+  right: 10%;
+  top: 10%;
+}
+.bar-choose ul {
+  position: absolute;
+  right: 1%;
+  top: 10%;
 }
 .bar-choose ul li {
   display: inline-block;
@@ -132,7 +139,7 @@
   position: relative;
   left: 10px;
   width: 25px;
-  padding: 10%;
+  padding: 1%;
 }
 .bar2.active,
 .bar4.active,
@@ -148,7 +155,7 @@
   position: relative;
   left: 3px;
   width: 25px;
-  padding: 10%;
+  padding: 1%;
 }
 .bar8 {
   border: 2px solid;
@@ -157,7 +164,7 @@
   position: relative;
   left: -4px;
   width: 25px;
-  padding: 10%;
+  padding: 1%;
 }
 .bar16 {
   border: 2px solid;
@@ -167,7 +174,7 @@
   position: relative;
   right: 11px;
   width: 25px;
-  padding: 10%;
+  padding: 1%;
 }
 
 .bar2:hover,
@@ -186,4 +193,88 @@
   width: 1px;
   height: 100%;
   background-color: grey;
+}
+
+.slider {
+  float: left;
+  width: 150px;
+  height: 25px;
+  position: absolute;
+  left: 45%;
+}
+.slider input {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 3px;
+  background: #ddd;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+  z-index: 2222;
+}
+
+.slider input::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  background: red;
+  border-radius: 50%;
+  background: #9052df;
+  border: 1px solid #9052df;
+  cursor: pointer;
+}
+.sliderValue {
+  position: relative;
+  width: 100%;
+}
+.sliderValue span {
+  position: absolute;
+  height: 30px;
+  width: 30px;
+  transform: translateX(-70%) scale(0);
+  font-weight: 500;
+  font-size: 14px;
+  top: -40px;
+  line-height: 40px;
+  z-index: 2;
+  color: #fff;
+  transform-origin: bottom;
+  transition: transform 0.3s ease-in-out;
+}
+.sliderValue span.show {
+  transform: translateX(-70%) scale(1);
+}
+.sliderValue span:after {
+  position: absolute;
+  content: "";
+  height: 100%;
+  width: 100%;
+  background: #9052df;
+  border: 3px solid #fff;
+  z-index: -1;
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg);
+  border-bottom-left-radius: 50%;
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
+  border-top-left-radius: 50%;
+  border-top-right-radius: 50%;
+}
+.field {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  position: relative;
+}
+.field .value {
+  position: absolute;
+  font-size: 10px;
+  color: #9052df;
+  font-weight: 600;
+}
+.field .value.left {
+  left: -22px;
+}
+.field .value.right {
+  right: -43px;
 }

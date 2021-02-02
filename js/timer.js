@@ -42,9 +42,13 @@ function timerCycle() {
 
     if (sec == timeInterval) {
       stopRecording();
+      playSong();
+      startTimer();
+      elem.style.left = moveLeft + "%";
+      move();
+    } else {
+      setTimeout("timerCycle()", 10);
     }
-
-    setTimeout("timerCycle()", 10);
   }
 }
 

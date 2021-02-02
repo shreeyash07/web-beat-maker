@@ -27,6 +27,8 @@ const bar2 = document.getElementById("bar2");
 const bar4 = document.getElementById("bar4");
 const bar8 = document.getElementById("bar8");
 const bar16 = document.getElementById("bar16");
+const slideValue = document.querySelector("span");
+const inputSlider = document.querySelector("input");
 
 const keyMap = [...keys].reduce((map, key) => {
   map[key.dataset.note] = key;
