@@ -3,7 +3,6 @@ let ms = 0;
 let sec = 0;
 let moveLeft = 0;
 let leftValue = 0.1666667;
-
 let stopTime = true;
 let timeInterval = 6;
 let v = timeInterval;
@@ -47,24 +46,10 @@ function timerCycle() {
       stopRecording();
       playButton.classList.remove("active");
       stopSong();
+      v = timeInterval;
       if (isPlaying) {
         r();
       }
-      //   sl = false;
-      // }
-      //   if (sl == true) {
-      //     playSong();
-      //     startTimer();
-      //     elem.style.left = moveLeft + "%";
-      //     move();
-      //     sl = false;
-      //   } else {
-      //     startTimer();
-      //     sec = 0;
-      //     sl = true;
-      //   }
-      // } else {
-      // } else {
     } else {
       setTimeout("timerCycle()", 10);
     }
@@ -72,12 +57,12 @@ function timerCycle() {
 }
 function r() {
   if (v == timeInterval) {
+    console.log(v);
     playSong();
     startTimer();
     elem.style.left = moveLeft + "%";
     playButton.classList.add("active");
     move();
-    sl = true;
   }
 }
 

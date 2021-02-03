@@ -30,6 +30,7 @@ const bar16 = document.getElementById("bar16");
 const slideValue = document.querySelector("span");
 const inputSlider = document.querySelector("input");
 const dot = document.getElementById("dots");
+const mic = document.getElementById("mic");
 
 const keyMap = [...keys].reduce((map, key) => {
   map[key.dataset.note] = key;

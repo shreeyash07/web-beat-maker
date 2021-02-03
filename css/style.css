@@ -71,6 +71,24 @@
 .play-button.active {
   background-image: url("../assets/images/stop.png");
 }
+.mic {
+  width: 24px;
+  height: 24px;
+  background-image: url("../assets/images/microphone_inactive.png");
+  position: absolute;
+  left: 15%;
+}
+.mic audio {
+  outline: none;
+  position: absolute;
+
+  left: 30px;
+  width: 259px;
+  height: 20px;
+}
+.mic.active {
+  background-image: url("../assets/images/microphone_active.png");
+}
 .key {
   /* float: left; */
   width: 100%;

@@ -29,7 +29,6 @@ playButton.addEventListener("click", () => {
   if (isPlaying) {
     playSong();
     startTimer();
-    sl = true;
     elem.style.left = moveLeft + "%";
     move();
     playButton.classList.add("active");

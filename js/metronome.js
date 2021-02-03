@@ -2,6 +2,8 @@ let mInterval;
 
 inputSlider.oninput = () => {
   let value = inputSlider.value;
+  stopMetronome();
+  metronome();
   slideValue.textContent = value;
   slideValue.style.left = value / 2 + "%";
   slideValue.classList.add("show");

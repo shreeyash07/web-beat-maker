@@ -26,6 +26,7 @@ function startRecording() {
   tempName = createDiv();
   startTimer();
   move();
+  isPlaying = false;
   isMetronome = false;
   recordButton.classList.add("active");
 }
