@@ -8,7 +8,7 @@ let index = 0;
 let divId = 1;
 let tempName = "";
 
-bar2.classList.add("active");
+bar4.classList.add("active");
 // validation for recording
 function change() {
   if (isRecording == true) {
@@ -26,7 +26,6 @@ function startRecording() {
   tempName = createDiv();
   startTimer();
   move();
-  metronome();
   isMetronome = false;
   recordButton.classList.add("active");
 }
@@ -39,23 +38,29 @@ function stopRecording() {
   checkLoop();
   recordButton.classList.remove("active");
 }
-
+let sInterval;
+let sTimeout;
 // plays recorded beats
 function playSong() {
   let newArr = [];
   if (loopArray.length != 0) {
     for (let i = 0; i < loopArray.length; i++) {
       newArr = newArr.concat(loopArray[i]);
-      console.log(newArr);
     }
     newArr.forEach((note) => {
-      setTimeout(() => {
-        playNote(keyMap[note.key]);
+      sInterval = setTimeout(() => {
+        console.log(isPlaying);
+        if (isPlaying) playNote(keyMap[note.key]);
       }, note.startTime);
     });
   }
 }
-
+function stopSong() {
+  stopTimer();
+  resetTimer();
+  clearTimeout(sInterval);
+  playButton.classList.remove("active");
+}
 /**
  *
  * @param {Object} key
@@ -83,7 +88,6 @@ function recordNote(note) {
     key: note,
     startTime: Date.now() - recordingStartTime,
   });
-  console.log(songNotes);
 }
 
 function saveLoop() {
@@ -92,7 +96,7 @@ function saveLoop() {
   }
   songNotes = [];
   index += 1;
-  console.log(loopArray);
+  //console.log(loopArray);
 }
 
 function createDiv() {
@@ -126,6 +130,7 @@ function move() {
     }
   }
 }
+
 function checkLoop() {
   const temp = document.getElementById(tempName);
   if (temp.querySelectorAll(".loop").length === 0) {
@@ -133,29 +138,3 @@ function checkLoop() {
     divId--;
   }
 }
-
-let mInterval;
-function metronome() {
-  const sound = document.getElementById("hat");
-  mInterval = setInterval(() => {
-    sound.play();
-    sound.currentTime = 0;
-
-    dot.classList.toggle("active");
-  }, (60 / parseInt(inputSlider.value)) * 1000);
-}
-function stopMetronome() {
-  clearInterval(mInterval);
-}
-//let mt = 1000 - ((1000 / 60) * parseInt(inputSlider.value) - 1000);
-//console.log(mt);
-inputSlider.oninput = () => {
-  let value = inputSlider.value;
-  console.log(value);
-  slideValue.textContent = value;
-  slideValue.style.left = value / 2 + "%";
-  slideValue.classList.add("show");
-};
-inputSlider.onblur = () => {
-  slideValue.classList.remove("show");
-};

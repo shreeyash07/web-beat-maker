@@ -15,7 +15,7 @@ keys.forEach((key) => {
 
 let isMetronome = true;
 dot.addEventListener("click", () => {
-  if (isMetronome == true) {
+  if (isMetronome) {
     metronome();
     isMetronome = false;
   } else {
@@ -23,12 +23,21 @@ dot.addEventListener("click", () => {
     isMetronome = true;
   }
 });
+let isPlaying = false;
 playButton.addEventListener("click", () => {
-  playSong();
-  startTimer();
-  elem.style.left = moveLeft + "%";
-  move();
-  //playButton.classList.add("active");
+  isPlaying = !isPlaying;
+  if (isPlaying) {
+    playSong();
+    startTimer();
+    sl = true;
+    elem.style.left = moveLeft + "%";
+    move();
+    playButton.classList.add("active");
+  } else {
+    stopSong();
+    playButton.classList.remove("active");
+    //isPlaying = true;
+  }
 });
 
 // keydown listener

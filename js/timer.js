@@ -2,10 +2,12 @@ const timer = document.getElementById("timer");
 let ms = 0;
 let sec = 0;
 let moveLeft = 0;
-let leftValue = 0.333333;
+let leftValue = 0.1666667;
 
 let stopTime = true;
-let timeInterval = 3;
+let timeInterval = 6;
+let v = timeInterval;
+let sl = true;
 
 function startTimer() {
   if (stopTime == true) {
@@ -41,14 +43,35 @@ function timerCycle() {
     timer.innerHTML = sec + ":" + ms;
 
     if (sec == timeInterval) {
-      //stopRecording();
-      playSong();
-      startTimer();
-      elem.style.left = moveLeft + "%";
-      move();
-    } else {
-      setTimeout("timerCycle()", 10);
+      stopRecording();
+      // if (sl == true) {
+      //   r();
+      //   sl = false;
+      // }
+      //   if (sl == true) {
+      //     playSong();
+      //     startTimer();
+      //     elem.style.left = moveLeft + "%";
+      //     move();
+      //     sl = false;
+      //   } else {
+      //     startTimer();
+      //     sec = 0;
+      //     sl = true;
+      //   }
+      // } else {
+      // } else {
     }
+    setTimeout("timerCycle()", 10);
+  }
+}
+function r() {
+  if (v == timeInterval) {
+    playSong();
+    startTimer();
+    elem.style.left = moveLeft + "%";
+    move();
+    sl = true;
   }
 }
 
