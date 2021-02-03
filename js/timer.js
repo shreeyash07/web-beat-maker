@@ -17,6 +17,7 @@ function startTimer() {
 }
 function stopTimer() {
   if (stopTime == false) {
+    moveLeft = 0;
     stopTime = true;
   }
 }
@@ -44,8 +45,11 @@ function timerCycle() {
 
     if (sec == timeInterval) {
       stopRecording();
-      // if (sl == true) {
-      //   r();
+      playButton.classList.remove("active");
+      stopSong();
+      if (isPlaying) {
+        r();
+      }
       //   sl = false;
       // }
       //   if (sl == true) {
@@ -61,8 +65,9 @@ function timerCycle() {
       //   }
       // } else {
       // } else {
+    } else {
+      setTimeout("timerCycle()", 10);
     }
-    setTimeout("timerCycle()", 10);
   }
 }
 function r() {
@@ -70,6 +75,7 @@ function r() {
     playSong();
     startTimer();
     elem.style.left = moveLeft + "%";
+    playButton.classList.add("active");
     move();
     sl = true;
   }
