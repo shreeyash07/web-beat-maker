@@ -20,6 +20,10 @@
   background-image: linear-gradient(to right, #52df9d, #41dc94);
 }
 
+.orange {
+  background-image: linear-gradient(to right, #f0b166, #ee9730);
+}
+
 .header-content {
   margin: 0, auto;
   width: 100%;
@@ -131,6 +135,10 @@
 
 .capslock {
   grid-column: span 4;
+}
+
+.shift {
+  grid-column: span 5;
 }
 
 .timer {

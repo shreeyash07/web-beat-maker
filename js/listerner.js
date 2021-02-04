@@ -76,6 +76,7 @@ document.addEventListener("keydown", (e) => {
   const purpleKeysIndex = PURPLE_KEYS.indexOf(key);
   const greenKeysIndex = GREEN_KEYS.indexOf(key);
   const blueKeysIndex = BLUE_KEYS.indexOf(key);
+  const orangeKeysIndex = ORANGE_KEYS.indexOf(key);
 
   const temp = document.getElementById(tempName);
   let color = "";
@@ -91,6 +92,10 @@ document.addEventListener("keydown", (e) => {
   if (blueKeysIndex > -1) {
     playNote(blueKeys[blueKeysIndex]);
     color = blueKeys[blueKeysIndex];
+  }
+  if (orangeKeysIndex > -1) {
+    playNote(orangeKeys[orangeKeysIndex]);
+    color = orangeKeys[orangeKeysIndex];
   }
 
   if (isRecording) {
