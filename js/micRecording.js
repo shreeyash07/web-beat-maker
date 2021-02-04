@@ -5,7 +5,6 @@ let mainAudio = document.createElement("audio");
 
 micDevice.then((stream) => {
   let recorder = new MediaRecorder(stream);
-  console.log(recorder);
   recorder.ondataavailable = (e) => {
     items.push(e.data);
 

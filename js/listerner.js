@@ -71,11 +71,14 @@ document.addEventListener("keydown", (e) => {
 
 // clear loop
 clear.addEventListener("click", () => {
-  const temp = document.getElementById(String("looper" + divId));
-
-  temp.parentNode.removeChild(temp);
   divId--;
-  loopArray = [];
+  if (divId > 0) {
+    let q = "looper" + divId;
+    console.log(q);
+    const temp = document.getElementById(String(q));
+    temp.parentNode.removeChild(temp);
+    loopArray = [];
+  }
 });
 
 // keydown listener
