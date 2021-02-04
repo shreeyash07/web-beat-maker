@@ -1,27 +1,30 @@
 let micDevice = navigator.mediaDevices.getUserMedia({ audio: true });
 let items = [];
+let play;
+let mainAudio = document.createElement("audio");
 
 micDevice.then((stream) => {
   let recorder = new MediaRecorder(stream);
-
+  console.log(recorder);
   recorder.ondataavailable = (e) => {
     items.push(e.data);
 
     if (recorder.state == "inactive") {
       let blob = new Blob(items, { type: "audio/webm" });
-      let mainAudio = document.createElement("audio");
+
       mainAudio.setAttribute("controls", "controls");
       console.log(mainAudio);
       mic.appendChild(mainAudio);
       mainAudio.controls = true;
-      mainAudio.innerHTML =
+      mainAudio.src =
         window.webkitURL.createObjectURL(blob) ||
         window.URL.createObjectURL(blob);
     }
   };
-
-  recorder.start(100);
-  setTimeout(() => {
-    recorder.stop();
-  }, 5000);
+  mic.addEventListener("click", () => {
+    recorder.start();
+    setTimeout(() => {
+      recorder.stop();
+    }, 5000);
+  });
 });

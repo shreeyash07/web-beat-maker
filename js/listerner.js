@@ -23,6 +23,7 @@ dot.addEventListener("click", () => {
     isMetronome = true;
   }
 });
+
 let isPlaying = false;
 playButton.addEventListener("click", () => {
   isPlaying = !isPlaying;
@@ -32,10 +33,39 @@ playButton.addEventListener("click", () => {
     elem.style.left = moveLeft + "%";
     move();
     playButton.classList.add("active");
+    play = mainAudio.controls.play;
+    console.log(play);
   } else {
     stopSong();
     playButton.classList.remove("active");
-    //isPlaying = true;
+  }
+});
+
+window.addEventListener("keydown", (e) => {
+  if (e.key == " ") {
+    isPlaying = !isPlaying;
+    if (isPlaying) {
+      playSong();
+      startTimer();
+      elem.style.left = moveLeft + "%";
+      move();
+      playButton.classList.add("active");
+    } else {
+      stopSong();
+      playButton.classList.remove("active");
+    }
+  }
+});
+
+window.addEventListener("keydown", (e) => {
+  if (e.key == "Shift") {
+    if (isRecording == true) {
+      stopRecording();
+      isRecording = false;
+    } else {
+      startRecording();
+      isRecording = true;
+    }
   }
 });
 

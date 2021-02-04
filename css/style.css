@@ -22,16 +22,17 @@
 
 .header-content {
   margin: 0, auto;
-  width: 94%;
+  width: 100%;
   display: inline-block;
-  height: 7vh;
-
+  height: 8vh;
   position: relative;
+  opacity: 0.9;
+  background: #ffffff;
 }
 
 .title {
   float: left;
-  width: 25%;
+  width: 30%;
   color: #369fd8;
   position: absolute;
   top: 20px;
@@ -85,7 +86,7 @@
   height: 24px;
   background-image: url("../assets/images/microphone_inactive.png");
   position: absolute;
-  left: 15%;
+  left: 20%;
 }
 
 .mic audio {
@@ -240,7 +241,7 @@
   width: 150px;
   height: 23px;
   position: absolute;
-  left: 45%;
+  left: 65%;
 }
 
 .slider-title {
@@ -248,6 +249,14 @@
   position: absolute;
   font-size: 14px;
   right: -61%;
+  top: 14%;
+  color: #9052df;
+}
+.metronome {
+  width: 50px;
+  position: absolute;
+  font-size: 14px;
+  right: 175%;
   top: 14%;
   color: #9052df;
 }
