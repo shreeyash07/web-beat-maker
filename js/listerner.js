@@ -57,8 +57,8 @@ window.addEventListener("keydown", (e) => {
   }
 });
 
-window.addEventListener("keydown", (e) => {
-  if (e.key == "Shift") {
+document.addEventListener("keydown", (e) => {
+  if (e.key == "Ctrl") {
     if (isRecording == true) {
       stopRecording();
       isRecording = false;
@@ -67,6 +67,15 @@ window.addEventListener("keydown", (e) => {
       isRecording = true;
     }
   }
+});
+
+// clear loop
+clear.addEventListener("click", () => {
+  const temp = document.getElementById(String("looper" + divId));
+
+  temp.parentNode.removeChild(temp);
+  divId--;
+  loopArray = [];
 });
 
 // keydown listener

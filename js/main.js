@@ -27,6 +27,7 @@ function change() {
 
 // starts recording time
 function startRecording() {
+  stopSong();
   recordingStartTime = Date.now();
   tempName = createDiv();
   startTimer();

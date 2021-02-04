@@ -33,6 +33,7 @@ const slideValue = document.querySelector("span");
 const inputSlider = document.querySelector("input");
 const dot = document.getElementById("dots");
 const mic = document.getElementById("mic");
+const clear = document.getElementById("clearLoop");
 
 const keyMap = [...keys].reduce((map, key) => {
   map[key.dataset.note] = key;

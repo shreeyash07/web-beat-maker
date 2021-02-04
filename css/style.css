@@ -85,6 +85,20 @@
   background-image: url("../assets/images/stop.png");
 }
 
+.clearLoop {
+  width: 40px;
+  height: 15px;
+  position: absolute;
+  left: 16%;
+  top: 13%;
+  color: #ffffff;
+  background-color: #9052df;
+  border: 0px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 10px;
+}
+
 .mic {
   width: 24px;
   height: 24px;
@@ -109,7 +123,7 @@
   /* float: left; */
   width: 100%;
   height: 100%;
-
+  box-shadow: 0 0px 20px 0 rgb(0 0 0 / 10%);
   position: relative;
   grid-column: span 2;
   cursor: pointer;
