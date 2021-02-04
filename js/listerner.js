@@ -33,8 +33,6 @@ playButton.addEventListener("click", () => {
     elem.style.left = moveLeft + "%";
     move();
     playButton.classList.add("active");
-    play = mainAudio.controls.play;
-    console.log(play);
   } else {
     stopSong();
     playButton.classList.remove("active");
@@ -71,13 +69,12 @@ document.addEventListener("keydown", (e) => {
 
 // clear loop
 clear.addEventListener("click", () => {
-  divId--;
-  if (divId > 0) {
+  if (divId >= 0) {
+    divId--;
     let q = "looper" + divId;
-    console.log(q);
     const temp = document.getElementById(String(q));
     temp.parentNode.removeChild(temp);
-    loopArray = [];
+    loopArray[divId] = [];
   }
 });
 

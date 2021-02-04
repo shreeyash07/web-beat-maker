@@ -64,7 +64,6 @@ function timerCycle() {
 // loop function
 function r() {
   if (v == timeInterval) {
-    console.log(v);
     playSong();
     startTimer();
     elem.style.left = moveLeft + "%";

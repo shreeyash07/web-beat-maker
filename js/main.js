@@ -5,7 +5,7 @@ let isRecording = false;
 let barTime;
 let loopArray = [];
 let index = 0;
-let divId = 1;
+let divId = 0;
 let tempName = "";
 let sTimeout;
 let i = 0;
@@ -56,7 +56,6 @@ function playSong() {
     }
     newArr.forEach((note) => {
       sTimeout = setTimeout(() => {
-        console.log(isPlaying);
         if (isPlaying) playNote(keyMap[note.key]);
       }, note.startTime);
     });

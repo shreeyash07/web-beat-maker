@@ -12,7 +12,6 @@ micDevice.then((stream) => {
       let blob = new Blob(items, { type: "audio/webm" });
 
       mainAudio.setAttribute("controls", "controls");
-      console.log(mainAudio);
       mic.appendChild(mainAudio);
       mainAudio.controls = true;
       mainAudio.src =
