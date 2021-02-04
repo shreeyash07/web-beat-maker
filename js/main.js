@@ -7,8 +7,13 @@ let loopArray = [];
 let index = 0;
 let divId = 1;
 let tempName = "";
+let sTimeout;
+let i = 0;
+let elem = document.getElementById("progress-line");
+elem.style.position = "absolute";
 
 bar4.classList.add("active");
+
 // validation for recording
 function change() {
   if (isRecording == true) {
@@ -31,6 +36,7 @@ function startRecording() {
   recordButton.classList.add("active");
 }
 
+//stop timer and reset it and stop recording
 function stopRecording() {
   isRecording = false;
   stopTimer();
@@ -39,8 +45,7 @@ function stopRecording() {
   checkLoop();
   recordButton.classList.remove("active");
 }
-let sInterval;
-let sTimeout;
+
 // plays recorded beats
 function playSong() {
   let newArr = [];
@@ -49,19 +54,22 @@ function playSong() {
       newArr = newArr.concat(loopArray[i]);
     }
     newArr.forEach((note) => {
-      sInterval = setTimeout(() => {
+      sTimeout = setTimeout(() => {
         console.log(isPlaying);
         if (isPlaying) playNote(keyMap[note.key]);
       }, note.startTime);
     });
   }
 }
+
+// Stop and clear intervals in playSong
 function stopSong() {
   stopTimer();
   resetTimer();
-  clearTimeout(sInterval);
+  clearTimeout(sTimeout);
   playButton.classList.remove("active");
 }
+
 /**
  *
  * @param {Object} key
@@ -91,15 +99,16 @@ function recordNote(note) {
   });
 }
 
+// create 2D array from recorded notes
 function saveLoop() {
   for (let i = 0; i < songNotes.length; i++) {
     loopArray.splice(index, 1, songNotes);
   }
   songNotes = [];
   index += 1;
-  //console.log(loopArray);
 }
 
+// create new div for visualization of recorded beats
 function createDiv() {
   divName = "looper" + divId;
   const newDiv = document.createElement("div");
@@ -114,9 +123,7 @@ function createDiv() {
   return divName;
 }
 
-let i = 0;
-let elem = document.getElementById("progress-line");
-elem.style.position = "absolute";
+// move progress line
 function move() {
   if (i == 0) {
     i = 1;
@@ -132,6 +139,7 @@ function move() {
   }
 }
 
+// if loop iv is not present delete parent div
 function checkLoop() {
   const temp = document.getElementById(tempName);
   if (temp.querySelectorAll(".loop").length === 0) {

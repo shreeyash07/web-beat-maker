@@ -1,5 +1,6 @@
 let mInterval;
 
+// slider for metronome value
 inputSlider.oninput = () => {
   let value = inputSlider.value;
   stopMetronome();
@@ -12,6 +13,7 @@ inputSlider.onblur = () => {
   slideValue.classList.remove("show");
 };
 
+//metronome function
 function metronome() {
   const sound = document.getElementById("hat");
   mInterval = setInterval(() => {
@@ -20,6 +22,8 @@ function metronome() {
     dot.classList.toggle("active");
   }, (60 / parseInt(inputSlider.value)) * 1000);
 }
+
+//stops the metronome
 function stopMetronome() {
   clearInterval(mInterval);
   dot.classList.remove("active");

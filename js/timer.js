@@ -8,12 +8,15 @@ let timeInterval = 6;
 let v = timeInterval;
 let sl = true;
 
+// starts timer
 function startTimer() {
   if (stopTime == true) {
     stopTime = false;
     timerCycle();
   }
 }
+
+// stops timer
 function stopTimer() {
   if (stopTime == false) {
     moveLeft = 0;
@@ -21,6 +24,7 @@ function stopTimer() {
   }
 }
 
+// main function for timeCycle
 function timerCycle() {
   if (stopTime == false) {
     sec = parseInt(sec);
@@ -42,6 +46,7 @@ function timerCycle() {
     }
     timer.innerHTML = sec + ":" + ms;
 
+    // stops recording and loops the play
     if (sec == timeInterval) {
       stopRecording();
       playButton.classList.remove("active");
@@ -55,6 +60,8 @@ function timerCycle() {
     }
   }
 }
+
+// loop function
 function r() {
   if (v == timeInterval) {
     console.log(v);
@@ -66,6 +73,7 @@ function r() {
   }
 }
 
+// resets the timer
 function resetTimer() {
   timer.innerHTML = "00:00" + "/" + timeInterval + "sec";
   ms = 0;

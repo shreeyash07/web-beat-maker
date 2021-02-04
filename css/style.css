@@ -9,16 +9,17 @@
 }
 
 .purple {
-  /* background-color: #a94be9; */
   background-image: linear-gradient(to right, #a672e9, #9052df);
 }
 
 .blue {
   background-image: linear-gradient(to right, #52a9d8, #369fd8);
 }
+
 .green {
   background-image: linear-gradient(to right, #52df9d, #41dc94);
 }
+
 .header-content {
   margin: 0, auto;
   width: 94%;
@@ -27,6 +28,7 @@
 
   position: relative;
 }
+
 .title {
   float: left;
   width: 25%;
@@ -36,6 +38,7 @@
   left: 60px;
   margin-left: 5%;
 }
+
 .logos {
   width: 50px;
   height: 50px;
@@ -44,6 +47,7 @@
   float: left;
   margin-left: 5%;
 }
+
 .buttons {
   cursor: pointer;
   margin: 0 auto;
@@ -52,15 +56,18 @@
   margin-top: 10px;
   position: relative;
 }
+
 .record-button {
   width: 24px;
   height: 24px;
   background-image: url("../assets/images/button_inactive.png");
   float: left;
 }
+
 .record-button.active {
   background-image: url("../assets/images/button.png");
 }
+
 .play-button {
   width: 24px;
   height: 24px;
@@ -68,9 +75,11 @@
   float: left;
   margin-left: 15px;
 }
+
 .play-button.active {
   background-image: url("../assets/images/stop.png");
 }
+
 .mic {
   width: 24px;
   height: 24px;
@@ -78,17 +87,19 @@
   position: absolute;
   left: 15%;
 }
+
 .mic audio {
   outline: none;
   position: absolute;
-
   left: 30px;
   width: 259px;
   height: 20px;
 }
+
 .mic.active {
   background-image: url("../assets/images/microphone_active.png");
 }
+
 .key {
   /* float: left; */
   width: 100%;
@@ -98,6 +109,7 @@
   grid-column: span 2;
   cursor: pointer;
 }
+
 .key.active {
   transform: scale(0.81, 0.81);
   opacity: 0.5;
@@ -107,12 +119,15 @@
 .delete {
   grid-column: span 4;
 }
+
 .tab {
   grid-column: span 3;
 }
+
 .return {
   grid-column: span 3;
 }
+
 .capslock {
   grid-column: span 4;
 }
@@ -133,6 +148,7 @@
   display: inline;
   text-align: center;
 }
+
 .bar-title {
   width: 50px;
   position: absolute;
@@ -146,6 +162,7 @@
   right: 3%;
   top: 10%;
 }
+
 .bar-choose ul li {
   display: inline-block;
 }
@@ -160,6 +177,7 @@
   width: 25px;
   padding: 2%;
 }
+
 .bar2.active,
 .bar4.active,
 .bar8.active,
@@ -167,6 +185,7 @@
   background-color: #9052df;
   color: #ffffff;
 }
+
 .bar4 {
   border: 2px solid;
   border-color: #9052df;
@@ -176,6 +195,7 @@
   width: 25px;
   padding: 1%;
 }
+
 .bar8 {
   border: 2px solid;
   border-color: #9052df;
@@ -185,6 +205,7 @@
   width: 25px;
   padding: 1%;
 }
+
 .bar16 {
   border: 2px solid;
   border-color: #9052df;
@@ -221,6 +242,7 @@
   position: absolute;
   left: 45%;
 }
+
 .slider-title {
   width: 50px;
   position: absolute;
@@ -229,6 +251,7 @@
   top: 14%;
   color: #9052df;
 }
+
 .dots {
   width: 20px;
   height: 20px;
@@ -238,9 +261,11 @@
   top: 7%;
   left: -45%;
 }
+
 .dots.active {
   background-color: #9052df;
 }
+
 .slider input {
   -webkit-appearance: none;
   width: 100%;
@@ -262,10 +287,12 @@
   border: 1px solid #9052df;
   cursor: pointer;
 }
+
 .sliderValue {
   position: relative;
   width: 100%;
 }
+
 .sliderValue span {
   position: absolute;
   height: 30px;
@@ -279,9 +306,11 @@
   transform-origin: bottom;
   transition: transform 0.3s ease-in-out;
 }
+
 .sliderValue span.show {
   transform: translateX(-70%) scale(1);
 }
+
 .sliderValue span:after {
   position: absolute;
   content: "";
@@ -297,6 +326,7 @@
   border-top-left-radius: 50%;
   border-top-right-radius: 50%;
 }
+
 .field {
   display: flex;
   align-items: center;
@@ -304,14 +334,17 @@
   height: 100%;
   position: relative;
 }
+
 .field .value {
   position: absolute;
   font-size: 14px;
   color: #9052df;
 }
+
 .field .value.left {
   left: -22px;
 }
+
 .field .value.right {
   right: -34px;
 }

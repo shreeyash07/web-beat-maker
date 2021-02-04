@@ -9,9 +9,9 @@ micDevice.then((stream) => {
 
     if (recorder.state == "inactive") {
       let blob = new Blob(items, { type: "audio/webm" });
-      console.log(blob);
       let mainAudio = document.createElement("audio");
       mainAudio.setAttribute("controls", "controls");
+      console.log(mainAudio);
       mic.appendChild(mainAudio);
       mainAudio.controls = true;
       mainAudio.innerHTML =
