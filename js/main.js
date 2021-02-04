@@ -112,6 +112,7 @@ function saveLoop() {
 function createDiv() {
   divName = "looper" + divId;
   const newDiv = document.createElement("div");
+  instruction.style.display = "none";
   newDiv.setAttribute("id", divName);
   newDiv.style.margin = "auto";
   newDiv.style.width = 96 + "%";

@@ -40,7 +40,7 @@ playButton.addEventListener("click", () => {
 });
 
 window.addEventListener("keydown", (e) => {
-  if (e.key == " ") {
+  if (e.key == "Alt") {
     isPlaying = !isPlaying;
     if (isPlaying) {
       playSong();
@@ -56,7 +56,7 @@ window.addEventListener("keydown", (e) => {
 });
 
 document.addEventListener("keydown", (e) => {
-  if (e.key == "Ctrl") {
+  if (e.key == "Control") {
     if (isRecording == true) {
       stopRecording();
       isRecording = false;

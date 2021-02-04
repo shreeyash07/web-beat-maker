@@ -21,8 +21,10 @@ micDevice.then((stream) => {
   };
   mic.addEventListener("click", () => {
     recorder.start();
+    mic.classList.add("active");
     setTimeout(() => {
       recorder.stop();
+      mic.classList.remove("active");
     }, 5000);
   });
 });

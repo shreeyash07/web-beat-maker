@@ -13,21 +13,23 @@
 
 .keyboard-wrapper {
   width: 96%;
+  height: 81%;
   margin: 0 auto;
   margin-top: 25px;
 }
 
 .keyboard {
-  width: 98%;
+  width: 100%;
   height: 40vh;
+  margin-left: 2%;
   display: grid;
   margin: 0 auto;
-  grid-template-columns: repeat(30, 40px);
-  grid-template-rows: repeat(4, 80px);
+  grid-template-columns: repeat(30, 3.25%);
+  grid-template-rows: repeat(4, 25.5%);
 }
 .looper-wrapper {
   width: 100%;
-  height: 70vh;
+  height: 45vh;
   margin: 0 auto;
   background-color: #eff1f1;
   overflow: hidden;
