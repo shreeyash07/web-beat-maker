@@ -7,10 +7,8 @@ micDevice.then((stream) => {
   let recorder = new MediaRecorder(stream);
   recorder.ondataavailable = (e) => {
     items.push(e.data);
-
     if (recorder.state == "inactive") {
       let blob = new Blob(items, { type: "audio/webm" });
-
       mainAudio.setAttribute("controls", "controls");
       mic.appendChild(mainAudio);
       mainAudio.controls = true;

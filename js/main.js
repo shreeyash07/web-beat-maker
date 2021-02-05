@@ -2,7 +2,6 @@ let recordingStartTime;
 let recordingStopTime;
 let songNotes = [];
 let isRecording = false;
-let barTime;
 let loopArray = [];
 let index = 0;
 let divId = 0;
@@ -20,6 +19,7 @@ function change() {
     stopRecording();
     isRecording = false;
   } else {
+    playSong();
     startRecording();
     isRecording = true;
   }
